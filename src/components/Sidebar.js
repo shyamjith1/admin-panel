@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import "./Sidebar.css";
 import {
   FaTh,
   FaBars,
@@ -22,18 +23,18 @@ function Sidebar({ Children }) {
   const MenuItem = [
 
     {
-      path: "/",
+      path: "/dashboard",
       name: "Dashboard",
       icon: <FaTh />
     },
 
     {
-      path: "/MSS",
+      path: "/Mss",
       name: "Mss",
       icon: <FaDashcube />
     },
     {
-      path: "/VENDORS",
+      path: "/Vendors",
       name: "Vendors",
       icon: <FaUser />
     },
@@ -55,7 +56,7 @@ function Sidebar({ Children }) {
   ]
   return (
     <div className='container'>
-      <div style={{ width: isOpen ? "250px" : "50px" }} className='sidebar'>
+  <div style={{ width: isOpen ? "250px" : "50px" }} className='sidebar'>
         <div className='top_section'>
           <h1 style={{ display: isOpen ? "block" : "none" }} className='logo'>Logo</h1>
           <div style={{ marginLeft: isOpen ? "50px" : "0px" }} className='bars'>
@@ -83,11 +84,11 @@ function Sidebar({ Children }) {
 
       </div>
 
-      <main>{Children}</main>
+      <main style={{ marginLeft: isOpen ? "250px" : "50px" }}>{Children}</main>
 
 
     </div>
   )
 }
 
-export default Sidebar
+export default Sidebar;
